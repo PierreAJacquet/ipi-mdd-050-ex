@@ -31,7 +31,12 @@ public class Commercial extends Employe {
 	}
 
 	public Double getPrimeAnnuelle() {
-		return Math.max(Math.ceil(this.getCaAnnuel() * 0.05), 500);
+		if (caAnnuel == null){
+			caAnnuel = 500.00;
+			return Math.max(Math.ceil(this.getCaAnnuel() * 0.05), 500);
+		} else {
+			return Math.max(Math.ceil(this.getCaAnnuel() * 0.05), 500);
+		}
 	}
 
 	public Double getCaAnnuel() {
